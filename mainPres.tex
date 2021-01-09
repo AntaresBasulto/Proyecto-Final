@@ -1,0 +1,135 @@
+\documentclass[11pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{url}
+\usetheme{Madrid}
+\newcommand{\celda}[1]{
+	\begin{minipage}{2.5cm}
+		\vspace{5mm}
+		#1
+		\vspace{5mm}
+	\end{minipage}
+}
+
+\author[Antares]{Antares Basulto Natividad\inst{1} \& Profesores: Dr.Gonzalo Aranda - Dr. Adolfo Centeno  \inst{1}}
+\title[Docking molecular]{Docking molecular}
+\date{Computación científica } 
+\subtitle{Acoplamiento molecular con AutoDock Tools y AutoDock Vina}
+\institute[UV]{
+	\inst{1}
+		Universidad Veracruzana. \\Instituto de Investigaciones Cerebrales.\\
+		\vspace{2mm}
+	
+}
+
+\AtBeginSection[]
+{
+	\begin{frame}<beamer>{Contenido}
+		\tableofcontents[currentsection,currentsubsection]
+	\end{frame}
+}
+
+
+\begin{document}
+	
+	\begin{frame}
+		\maketitle
+	\end{frame}
+
+	\begin{frame}{Contenido}
+		\tableofcontents
+	\end{frame}
+
+	\section {I}
+		\begin{frame}{I}
+			\justifying Recientemente se ha propagado por todo el mundo un brote de un virus nuevo, que provenia de hu huang, china. Este virus con alta incidencia en ciertos grupos de edad, no parecia comportarse de la misma manera en todos los casos (Jun Zheng 2020)  , lo que conllevo a pensar en mecanismos por los cuales se tenia que actuar para proponer un tratamiento casi inmediato para evitar la propagacion, por lo que cientificos de todo el mundo se han unido en la busqueda de dicho tratamiento.
+		\end{frame}
+	
+	\section{II}
+		\begin{frame}{II}
+			\justifying La proteina E está integrada por 75 aminoácidos, de los cuales se forma una estructura de hélice alfa de los aminoácidos 15 a 39 y los demás como estructuras secundarias en forma de espiral.
+Varias investigaciones demuestran que la carencia de proteína E mitiga el daño en los ratones que han sido infectados con COVID-19, debido a que con el uso de diferentes softwares se muestra que es muy hidrófoba, indicando que forma parte de una región intramembrana (Aranda, Hernández, Herrera y Rojas, 2020). 
+			\end{frame}
+			
+			
+	
+	\section{III}
+		\begin{frame}{III}
+			\justifying Dentro de los estudios que se han publicado, se observa el uso del farmaco Amantadina como posible atenuante de los efectos de COVID-19. Se ha demostrado que las personas que sufren la enfermedad de Parkinson y que dieron un resultado positivo de coronavirus, tienen un tratamiento con amantadina y por ende no han manifestado síntomas clínicos del virus (Araújo, Aranda y Aranda, 2020).
+		\end{frame}
+	
+	
+		
+		\begin{frame}{Docking molecular.}
+			\justifying
+			A continuación se muestran algunas imágenes que se obtuvieron durante el proceso de alineación molecular:
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.3]{11.png}
+				\caption{Parte importante de la proteina E}
+				\label{fig: Figura1}
+			\end{figure}
+		\end{frame} 
+		
+			\begin{frame}{Docking molecular.}
+			\justifying
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.3]{28.png}
+				\caption{Proteína E con el ligando amantadina}
+				\label{fig: Figura2}
+			\end{figure}
+		\end{frame} 
+		
+		\begin{frame}{Docking molecular.}
+			\justifying
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.3]{59.png}
+				\caption{Resultado del acoplamiento}
+				\label{fig: Figura3}
+			\end{figure}
+		\end{frame} 
+		
+	
+	
+	\section{Conclusión}
+		\begin{frame}{Conclusión}
+			\justifying El docking es una herramienta cientifica de gran utilidad para acortar procesos de pruebas de reconocimeintos de ligandos, pues nos proporciona una vista de dicha union mas especificamente, pues simula las caracteristicas tridimencionales parecidas a como  se podria encontrar a la molecula de forma natural. El conocmiento del mecanismo de accion resultante de la union del ligando con su diana, es muy importante en el descubrimiento y desarrollo de nuevos y potenciales fármacos. Cientificos  han propuesto un modelo describiendo a la amantadina como posible farmaco ligando que entra en el canal que se forma por la proteína E del virus para romper los puentes de hidrógeno formados con el agua como lo hace en la influenza A. Por lo que puede recomendarse a la amantadina como inhibidor de la conductancia del canal E en bicapas lipídicas reconstituidas y administrarse cuando se presentan los primeros síntomas de la enfermedad por COVID-19 para atenuar los efectos del virus. 
+			
+		\end{frame}
+	
+	
+
+	
+	
+	\section{Referencias}
+		\begin{frame}{Referencias}
+			\justifying 
+			
+1. Aranda, G., Hernández, M., Herrera, D. y Rojas, F. (2020). Amantadine as a drug to mitigate the effects of COVID-19. Medical Hypotheses. 140: 1-3. 
+
+2.Prabhat Pratap Singh & TomarIsaiah T.Arkin, Biochemical and Biophysical Research Communications, SARS-CoV-2 E protein is a potential ion channel that can be inhibited by Gliclazide and Memantine, Biochemical and Biophysical Research Communications, Volume 530, Issue 1, 10 September 2020, Pages 10-14
+
+3. Zheng J. SARS-CoV-2: an Emerging Coronavirus that Causes a Global Threat. Int J Biol Sci 2020; 16(10):1678-1685. 
+
+4. Zheng J. SARS-CoV-2: an Emerging Coronavirus that Causes a Global Threat. Int J Biol Sci 2020; 16(10):1678-1685. 
+
+5. Font, C. (2017). Modelado molecular como herramienta para el descubrimiento de nuevos fármacos que interaccionan con proteínas. Trabajo de fin de grado. 
+
+6. Terré, R., Pérez, A., Roig, T., Bernabéu, M., y Ramón, S. (2002). Tratamiento farmacológico con amantadina en pacientes con lesión cerebral. 
+
+7. Huey, R., Morris, G. y Forli, S. (2012). Using AutoDock4 and AutoDock Vina with AutoDockTools: A tutorial. USA: The Scripps Research Institute. 
+			
+		\end{frame}
+	
+	
+\end{document}

@@ -1,0 +1,494 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template} 
+\usepackage{graphicx,url}
+\usepackage{url}
+\usepackage[brazil]{babel} 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage[normalem]{ulem}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage[square,authoryear]{natbib}
+\usepackage{amssymb} 
+\usepackage{mathalfa} 
+\usepackage{algorithm} 
+\usepackage{algpseudocode} 
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage{listings}
+
+\usepackage{amsmath} 
+\usepackage{booktabs}
+
+\urlstyle{same}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\newcommand\Tstrut{\rule{0pt}{2.6ex}} 
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}} 
+\newcommand{\scell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+\usepackage[nolist,nohyperlinks]{acronym}
+
+\title{
+UNIVERSIDAD VERACRUZANA
+
+
+
+INSTITUTO DE INVESTIGACIONES CEREBRALES
+
+
+
+DOCTORADO EN INVESTIGACIONES CEREBRALES
+
+
+
+
+
+
+COMPUTACION CIENTIFICA Y BIOPYTHON
+PORTAFOLIO DE EVIDENCIA DEL PROYECTO FINAL “DOCKING MOLECULAR”
+}
+
+
+
+
+
+\author{Presenta:\\
+        Antares Basulto Natividad\inst{1}\\ 
+        
+        Profesores:\\
+        Dr. Gonzalo Emiliano Aranda Abreu\inst{1}; Dr. Adolfo Centeno Tellez\inst{1}}
+
+
+
+\address{Instituto de Investigaciones Cerebrales IICE - UV. 
+\email{abasulto@gmail.com}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{document} 
+	
+	\maketitle
+
+	
+	
+
+	
+Recientemente se ha propagado por todo el mundo un brote de un virus nuevo, que provenia de hu huang, china. Este virus con alta incidencia en ciertos grupos de edad, no parecia comportarse de la misma manera en todos los casos (Jun Zheng 2020)  , lo que conllevo a pensar en mecanismos por los cuales se tenia que actuar para proponer un tratamiento casi inmediato para evitar la propagacion, por lo que cientificos de todo el mundo se han unido en la busqueda de dicho tratamiento.
+
+El SARS-CoV-2 es un virus emergente como habia mencionado, debido a ello sabemos muy poco al respecto. sin embargo, por el momento se pueden destacar los eventos clave ocurridos durante la etapa inicial del brote de SARS-CoV-2, las características básicas del patógeno, los signos y síntomas de los pacientes infectados, así como las posibles vías de transmisión del virus (Prabhat Pratap Singh & TomarIsaiah T.Arki 2020). 
+
+La proteina E está integrada por 75 aminoácidos, de los cuales se forma una estructura de hélice alfa de los aminoácidos 15 a 39 y los demás como estructuras secundarias en forma de espiral.
+Varias investigaciones demuestran que la carencia de proteína E mitiga el daño en los ratones que han sido infectados con COVID-19, debido a que con el uso de diferentes softwares se muestra que es muy hidrófoba, indicando que forma parte de una región intramembrana (Aranda, Hernández, Herrera y Rojas, 2020). 
+
+Dentro de los estudios que se han publicado, se observa el uso del farmaco Amantadina como posible atenuante de los efectos de COVID-19. Se ha demostrado que las personas que sufren la enfermedad de Parkinson y que dieron un resultado positivo de coronavirus, tienen un tratamiento con amantadina y por ende no han manifestado síntomas clínicos del virus (Araújo, Aranda y Aranda, 2020).
+
+La amantadina deriva del adamantano y es una amina cíclica primaria. Es un agonista dopaminérgico débil,con poca actividad de muscarina por lo que es un fármaco conocido como antiviral porque es capaz de atravesar la barrera hematoencefálica, actuando a nivel presináptico y aumentando la liberación dedopamina o inhibiendo su recaptación, pero también actuando a nivel  postsináptico  incrementando  el  número  de  receptores  de  la  dopamina. También se sabe que es un agente antiviral anti-RNA con valiosa actividad in vitro contra otros virus como la gripe por virus de la influenza A y diferentes padecimientos como la depresión, la enuresis,  Parkinson y gripe aviar (Terré, Pérez, Roig, Bernabéu y Ramón, 2002; Salazar, Peralta y Pastor, 2009). 
+
+La amantadina como fármaco ha sido utilizado para terapia antiviral contra la gripe por virus de la Influenza A actuando como bloqueador en la etapa de replicación viral temprana. Se sabe que cuando el virus ingresa a la célula, se crea un endosoma y el canal de protones que está formado por la proteína M2 transporta protones al interior del virión, lo cual, la amantadina atravieza el endosoma para interrumpir la liberación del virión a la célula. Así mismo, la amantadina actúa e ingresa al canal E del SARS-Cov-2 y evita la liberación del virus en la célula, por lo que varios estuidos de acoplamiento han sugerido que la amantadina interactúa con varios aminoácidos del virus para bloquear el canal de protones (Araújo, Aranda y Aranda, 2020).
+	
+	
+
+	\section{Docking molecular }
+	\label{sec:trab_relacionados}
+	
+El docking molecular o acoplamiento molecular, es una herramienta bioinformática que permite descubrir y calcular la posición de interacción entre un ligando y un blanco proteico con una representación 3D. Para realizar un problema de acoplamiento molecular se necesita utilizar adecuadamente algoritmos metaheurísticos ya que es un problema de optimización que requiere de varios ajustes y conocimiento de las variables, coordenadas de traslación y movimiento de torsión de la molécula o proteína. La acción farmacológica se produce con la formación de un  complejo  entre  el  fármaco  y  su  receptor  biológico, la cual se  puede optimizar  conociendo  las  estructuras  del  fármaco  y  del  receptor. Así mismo, mediante el  estudio  de dicha interacción entre fármaco y receptor se busca el poder conseguir un compuesto que con la mínima concentración  se forme el   complejo  con  su  receptor  y así generar una respuesta. 
+
+
+
+\section{Conclusiones}
+\label{sec:conclusao}
+	
+
+El docking es una herramienta cientifica de gran utilidad para acortar procesos de pruebas de reconocimeintos de ligandos, pues nos proporciona una vista de dicha union mas especificamente, pues simula las caracteristicas tridimencionales parecidas a como  se podria encontrar a la molecula de forma natural. El conocmiento del mecanismo de accion resultante de la union del ligando con su diana, es muy importante en el descubrimiento y desarrollo de nuevos y potenciales fármacos. Cientificos  han propuesto un modelo describiendo a la amantadina como posible farmaco ligando que entra en el canal que se forma por la proteína E del virus para romper los puentes de hidrógeno formados con el agua como lo hace en la influenza A. Por lo que puede recomendarse a la amantadina como inhibidor de la conductancia del canal E en bicapas lipídicas reconstituidas y administrarse cuando se presentan los primeros síntomas de la enfermedad por COVID-19 para atenuar los efectos del virus. 
+
+
+
+\section{Referencias}
+\label{chap:Referencias}
+1. Aranda, G., Hernández, M., Herrera, D. y Rojas, F. (2020). Amantadine as a drug to mitigate the effects of COVID-19. Medical Hypotheses. 140: 1-3. 
+2.Prabhat Pratap Singh & TomarIsaiah T.Arkin, Biochemical and Biophysical Research Communications, SARS-CoV-2 E protein is a potential ion channel that can be inhibited by Gliclazide and Memantine, Biochemical and Biophysical Research Communications, Volume 530, Issue 1, 10 September 2020, Pages 10-14
+
+3. Zheng J. SARS-CoV-2: an Emerging Coronavirus that Causes a Global Threat. Int J Biol Sci 2020; 16(10):1678-1685. 
+
+4. Zheng J. SARS-CoV-2: an Emerging Coronavirus that Causes a Global Threat. Int J Biol Sci 2020; 16(10):1678-1685. 
+
+5. Font, C. (2017). Modelado molecular como herramienta para el descubrimiento de nuevos fármacos que interaccionan con proteínas. Trabajo de fin de grado. 
+
+6. Terré, R., Pérez, A., Roig, T., Bernabéu, M., y Ramón, S. (2002). Tratamiento farmacológico con amantadina en pacientes con lesión cerebral. 
+
+7. Huey, R., Morris, G. y Forli, S. (2012). Using AutoDock4 and AutoDock Vina with AutoDockTools: A tutorial. USA: The Scripps Research Institute. 
+
+	
+	\section{Metodología}
+	\label{sec:metodologia}
+	
+Para la realización del docking se utilizó el programa AutoDockTools-1.5.6 y AutoDock Vina, la proteína E del SARS-Cov-2, la Amantadina como ligando (DB00915) y los aminoácidos ASN15, LEU18 y LEU19 (Huey, Morris y Forli, 2012) 
+
+  
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/1.png}
+ \caption{Descargar autodock Tools y vina}
+\end{figure}
+
+	
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/2.png}
+ \caption{Seleccionar el destino de los archivos que se estarán manipulando, en este caso HP es el destino final}
+ \label{fig:exemplo}
+\end{figure}
+
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/3.png}
+\end{figure}
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/4.png}
+ \caption{Posteriormente a esto, procederemos a cargar la proteína}
+ \label{fig:exemplo}
+\end{figure}
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/5.png}
+\end{figure}
+
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/6.png}
+ \caption{La proteína se verá de esta forma, sin embargo debemos prepararla para poder llevar a cabo el Docking molecular}
+ \label{fig:exemplo}
+\end{figure}
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/9.png}
+ \caption{Se selecciona la proteína de interés, y se opta por una mejor vista, se procede a agregar hidrogenos y cargas}
+ \label{fig:exemplo}
+\end{figure}
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/10.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/11.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/12.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/13.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/14.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/15.png}
+ \caption{Se procede a agregar el ligando}
+ \label{fig:exemplo}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/16.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/18.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/19.png}
+\end{figure}
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/20.png}
+ \caption{Se procede a guardar al archivo}
+ \label{fig:exemplo}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/21.png}
+\end{figure}
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/22.png}
+\end{figure}
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/23.png}
+\end{figure}
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/24.png}
+\end{figure}
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/26.png}
+ \caption{Seleccionamos los aminoacidos de nuestro interes y se opta por una vista distinta para poder denotar la interaccion entre ellos}
+ \label{fig:exemplo}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/27.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/28.png}
+\end{figure}
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/30.png}
+ \caption{Tratamos de que el espacio de la caja abarque todo el complejo.}
+ \label{fig:exemplo}
+\end{figure}
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/31.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/32.png}
+ \caption{Seleccionamos lo siguiente.}
+ \label{fig:exemplo}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/33.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/34.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/35.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/36.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/37.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/39.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/40.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/41.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/42.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/43.png}
+\end{figure}43
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/44.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/47.png}
+ \caption{Nos aparece una leyenda que desaparece a la brevedad. Y finalmente podemos observar las alineaciones en la terminal.}
+ \label{fig:exemplo}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/49.png}
+ \caption{Seleecionamos la molécula}
+ \label{fig:exemplo}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/50.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/51.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/52.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/53.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/54.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/55.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/56.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/57.png}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics 
+ [width=0.70\textwidth]{figures/59.png}
+ \caption{Finalmente obtenemos el resultado}
+ \label{fig:exemplo}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
